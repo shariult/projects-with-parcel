@@ -1,0 +1,44 @@
+{
+  "name": "projects-with-parcel",
+  "version": "1.0.0",
+  "description": "This Package is for Developing, Compiling & Building frontend technology such as Website templates, vanilla JavaScript Web Applications etc. It is easier to use and also have full production level code support. It can work with multiple projects in one place with minimum configuration. For features and instructions view README.md",
+  "main": "index.html",
+  "scripts": {
+    "reset": "node reset.js",
+    "start": "parcel ./src/index.html",
+    "build": "parcel build ./src/index.html --out-dir ./dist --public-url ./"
+  },
+  "author": "Md. Shariul Islam Tuhin",
+  "license": "MIT",
+  "browserslist": [
+    "last 5 version",
+    "> 0.5%",
+    "IE 10"
+  ],
+  "customDistStructure": {
+    "config": {
+      ".js": "js",
+      ".css": "css",
+      "map": [
+        ".map"
+      ],
+      "css/webfonts": [
+        ".ttf",
+        ".woff",
+        ".woff2",
+        ".eot",
+        "otf"
+      ],
+      "img": [
+        ".jpg",
+        ".png",
+        "jpeg",
+        "gif",
+        "svg"
+      ]
+    },
+    "options": {
+      "development": false
+    }
+  }
+}
