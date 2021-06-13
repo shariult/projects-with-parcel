@@ -11,8 +11,6 @@ const path = require("path"),
 let jsFileText = `//==========================================
 // Imports
 //==========================================
-import axios from "./lib/axios.min.js";
-window.axios = axios;
 
 //==========================================
 // Variables
@@ -46,6 +44,7 @@ const htmlFileText = `<!DOCTYPE html>
 //==========================================
 // Code
 //==========================================
+// Reset Funcitons
 function resetStarter() {
   //deleting git directory
   function deleteFolderRecursive(path) {
@@ -63,45 +62,27 @@ function resetStarter() {
       fs.rmdirSync(path);
     }
   }
-  deleteFolderRecursive("./.git");
-  deleteFolderRecursive("./.idea");
-  deleteFolderRecursive("./src/js/components");
-
-  // file cleanup
-  fs.writeFile("./src/index.html", htmlFileText, function (err) {
-    if (!err) console.log("index.html Cleaned Succesfully!");
+  try {
+    deleteFolderRecursive("./.git");
+    deleteFolderRecursive("./.idea");
+    deleteFolderRecursive("./src/js/components");
+    // file cleanup
+    fs.writeFileSync("./src/index.html", htmlFileText);
+    fs.writeFileSync("./src/js/main.js", jsFileText);
+    if (fs.existsSync("./LICENSE")) {
+      fs.unlinkSync("./LICENSE");
+    }
+    if (!fs.existsSync("./src/js/components/")) {
+      fs.mkdirSync("./src/js/components/");
+    }
+    fs.writeFileSync("./src/js/components/variables.js", jsFileText);
+    fs.writeFileSync("./src/scss/pages/_home.scss", "");
+    fs.writeFileSync("./src/scss/layout/_navigation.scss", "");
+    fs.writeFileSync("./src/scss/layout/_footer.scss", "");
+  } catch (err) {
     console.log(err);
-  });
-  fs.writeFile("./src/js/main.js", jsFileText, function (err) {
-    if (!err) console.log("main.js Cleaned Succesfully!");
-    console.log(err);
-  });
-  if (fs.existsSync("./LICENSE")) {
-    fs.unlink("./LICENSE", function (err) {
-      if (err) throw err;
-      console.log("LICENSE File deleted!");
-    });
   }
-  if (!fs.existsSync("./src/js/components/")) {
-    fs.mkdirSync("./src/js/components/");
-  }
-  fs.writeFile("./src/js/components/variables.js", jsFileText, function (err) {
-    if (!err) console.log("variables.js Cleaned Succesfully!");
-    console.log(err);
-  });
-  fs.writeFile("./src/scss/pages/_home.scss", "", function (err) {
-    if (!err) console.log("_home.scss Cleaned Succesfully!");
-    console.log(err);
-  });
-  fs.writeFile("./src/scss/layout/_navigation.scss", "", function (err) {
-    if (!err) console.log("_navigation.scss Cleaned Succesfully!");
-    console.log(err);
-  });
-  fs.writeFile("./src/scss/layout/_footer.scss", "", function (err) {
-    if (!err) console.log("_footer.scss Cleaned Succesfully!");
-    console.log(err);
-  });
-} /*//=============/resetStarter end/=============//*/
+}
 
 //==========================================
 // Exports
