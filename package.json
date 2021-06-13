@@ -6,7 +6,7 @@
   "scripts": {
     "reset": "node reset.js",
     "start": "parcel ./src/index.html",
-    "build": "parcel build ./src/index.html --out-dir ./dist --public-url ./"
+    "build": "parcel build ./src/index.html --out-dir ./src/dist --public-url ./"
   },
   "author": "Md. Shariul Islam Tuhin",
   "license": "MIT",
