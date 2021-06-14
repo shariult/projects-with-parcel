@@ -15,13 +15,13 @@ This Package is for Developing, Compiling & Building frontend technology such as
 **Node.JS** is required. Install it then run following code one by one in terminal from project directory,
 
 ```bash
-npm i -D parcel-bundler parcel-plugin-custom-dist-structure parcel-plugin-nuke-dist sass parcel-plugin-ejs-template pug typescript prettier
+npm i -D parcel-bundler parcel-plugin-custom-dist-structure parcel-plugin-nuke-dist sass@1.32.12 parcel-plugin-ejs-template pug typescript prettier
 npm run reset
 ```
 Or, In any bash terminal (Git bash too), run following to install all in one go,
 
 ```bash
-npm i -D parcel-bundler parcel-plugin-custom-dist-structure parcel-plugin-nuke-dist sass parcel-plugin-ejs-template pug typescript prettier @fortawesome/fontawesome-free && npm i -S bootstrap jquery popper.js bulma tailwindcss d3 axios && npm run reset
+npm i -D parcel-bundler parcel-plugin-custom-dist-structure parcel-plugin-nuke-dist sass@1.32.12 parcel-plugin-ejs-template pug typescript prettier @fortawesome/fontawesome-free && npm i -S bootstrap jquery popper.js bulma tailwindcss d3 axios && npm run reset
 ```
 
 Image compression package is not installed due to some bugs in the package which disables image import via JavaScript. To enable image import install following,
