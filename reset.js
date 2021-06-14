@@ -26,7 +26,6 @@ let jsFileText = `//==========================================
 
 // Initial Html File Text
 const htmlFileText = `<!DOCTYPE html>
-<!DOCTYPE html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
