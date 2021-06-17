@@ -21,7 +21,7 @@ npm run reset
 Or, In any bash terminal (Git bash too), run following to install all in one go,
 
 ```bash
-npm i -D parcel-bundler parcel-plugin-custom-dist-structure parcel-plugin-nuke-dist sass@1.32.12 parcel-plugin-ejs-template pug typescript prettier @fortawesome/fontawesome-free && npm i -S bootstrap jquery popper.js bulma tailwindcss d3 axios && npm run reset
+npm i -D parcel-bundler parcel-plugin-custom-dist-structure parcel-plugin-nuke-dist sass@1.32.12 parcel-plugin-ejs-template pug typescript prettier @fortawesome/fontawesome-free && npm i -S bootstrap jquery @popperjs/core bulma tailwindcss d3 axios && npm run reset
 ```
 
 Image compression package is not installed due to some bugs in the package which disables image import via JavaScript. To enable image import install following,
@@ -84,7 +84,7 @@ By default project directory is set to "./src". To change the project/working di
 **Installation:**
 
 ```bash
-npm i bootstrap jquery popper.js
+npm i bootstrap jquery @popperjs/core
 npm i -D @fortawesome/fontawesome-free
 ```
 
