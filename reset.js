@@ -64,12 +64,16 @@ function resetStarter() {
   try {
     deleteFolderRecursive("./.git");
     deleteFolderRecursive("./.idea");
+    deleteFolderRecursive("./src/img");
     deleteFolderRecursive("./src/js/components");
     // file cleanup
     fs.writeFileSync("./src/index.html", htmlFileText);
     fs.writeFileSync("./src/js/main.js", jsFileText);
     if (fs.existsSync("./LICENSE")) {
       fs.unlinkSync("./LICENSE");
+    }
+    if (!fs.existsSync("./src/img/")) {
+      fs.mkdirSync("./src/img/");
     }
     if (!fs.existsSync("./src/js/components/")) {
       fs.mkdirSync("./src/js/components/");
