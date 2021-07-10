@@ -64,7 +64,6 @@ function resetStarter() {
   try {
     deleteFolderRecursive("./.git");
     deleteFolderRecursive("./.idea");
-    deleteFolderRecursive("./src/img");
     deleteFolderRecursive("./src/js/components");
     // file cleanup
     fs.writeFileSync("./src/index.html", htmlFileText);
@@ -72,9 +71,8 @@ function resetStarter() {
     if (fs.existsSync("./LICENSE")) {
       fs.unlinkSync("./LICENSE");
     }
-    if (!fs.existsSync("./src/img/")) {
-      fs.mkdirSync("./src/img/");
-    }
+    fs.unlinkSync("./src/img/logo.png");
+    fs.unlinkSync("./src/img/parcel.svg");
     if (!fs.existsSync("./src/js/components/")) {
       fs.mkdirSync("./src/js/components/");
     }
