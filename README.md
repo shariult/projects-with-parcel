@@ -1,4 +1,4 @@
-# Environment for Front-end Development
+# Projects with Parcel
 
 Tool for developing Front-end applications written in HTML/EJS, CSS/SASS/SCSS and JavaScript.
 
