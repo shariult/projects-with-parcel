@@ -1,0 +1,18 @@
+{
+  "extends": [
+    "@parcel/config-default"
+  ],
+  "transformers": {
+    "*.ejs": [
+      "parcel-transformer-ejs"
+    ]
+  },
+  "namers": [
+    "parcel-namer-struct",
+    "..."
+  ],
+  "reporters": [
+    "...",
+    "parcel-reporter-clean-dist"
+  ]
+}

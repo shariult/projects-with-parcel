@@ -1,0 +1,58 @@
+{
+  "name": "env-frontend",
+  "version": "1.0.0",
+  "description": "Tool for developing Front-end applications written using HTML/EJS, CSS/SASS/SCSS and JavaScript.",
+  "source": "src/index.html",
+  "browserslist": "> 0.5%, last 2 versions, not dead",
+  "scripts": {
+    "start": "parcel ./src/index.html --dist-dir ./src/dist",
+    "build": "parcel build ./src/index.html --dist-dir ./src/dist --public-url ./",
+    "reset": "node reset.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/shariult/env-frontend.git"
+  },
+  "author": "Md. Shariul Islam",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/shariult/env-frontend/issues"
+  },
+  "homepage": "https://github.com/shariult/env-frontend#readme",
+  "parcel-namer-struct": [
+    {
+      "type": [
+        "css"
+      ],
+      "dest": "/css/"
+    },
+    {
+      "type": [
+        "ttf",
+        "woff",
+        "woff2",
+        "eot",
+        "otf"
+      ],
+      "dest": "/css/webfonts/"
+    },
+    {
+      "type": [
+        "js"
+      ],
+      "dest": "/js/"
+    },
+    {
+      "type": [
+        "jpg",
+        "png",
+        "jpeg",
+        "gif",
+        "svg",
+        "mp4",
+        "webm"
+      ],
+      "dest": "/img/"
+    }
+  ]
+}
